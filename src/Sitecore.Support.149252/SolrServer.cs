@@ -42,7 +42,7 @@ namespace Sitecore.Support
                 string newValue = oldValue.Replace("\"", String.Empty).Replace("\\~", "\"~");
                 q = q.Replace(oldValue, newValue);
                 SearchLog.Log.Info("#Sitecore.Support.149252 Overridden Query - ?q=" + q, null);
-                return q;
+                return FixTildeBeforeParameter(q);
             }
             return q;
         }
